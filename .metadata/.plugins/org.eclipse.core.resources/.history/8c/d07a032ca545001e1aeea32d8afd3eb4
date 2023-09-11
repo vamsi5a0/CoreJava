@@ -1,0 +1,13 @@
+package comdl.testconnections;
+
+import java.sql.Connection;
+import java.sql.Statement;
+
+public class Eg2 {
+	Connection connection = null;
+	Statement statement = null;
+
+	public static void main(String[] args) {
+
+	}
+}

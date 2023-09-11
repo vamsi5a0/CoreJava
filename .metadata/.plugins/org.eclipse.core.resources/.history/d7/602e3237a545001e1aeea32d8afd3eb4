@@ -1,0 +1,23 @@
+package comdl.testconnections;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
+
+public class Eg2 {
+	Connection connection = null;
+	Statement statement = null;
+
+	public static void main(String[] args) throws SQLException {
+		try {
+			Class.forName("com.mysql.cd.jdbc.Driver");
+
+			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/advjava15_jdbc", "root", "root");
+			
+			statement = connection.createStatement();
+		} catch (Exception e) {
+			System.out.println(e);
+		} finally {
+		}
+	}
+}

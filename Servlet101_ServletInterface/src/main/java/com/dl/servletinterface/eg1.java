@@ -1,0 +1,49 @@
+package com.dl.servletinterface;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.Servlet;
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+
+public class eg1 implements Servlet{
+
+	 ServletConfig config;
+
+	
+
+	@Override
+	public ServletConfig getServletConfig() {
+		System.out.println("getServletConfig method");
+		return config;
+	}
+
+	@Override
+	public String getServletInfo() {
+		System.out.println("get servletinfo method");
+		return "getServleteInfo";
+	}
+
+	@Override
+	public void init(ServletConfig arg0) throws ServletException {
+		System.out.println("init method invoked");
+		
+	}
+
+	@Override
+	public void service(ServletRequest request, ServletResponse response) throws ServletException, IOException {
+		StringBuffer sb=new StringBuffer("Hello servlet");
+		PrintWriter writer = response.getWriter();
+		writer.print(sb);
+		System.out.println("service() method invoked");
+	}
+	@Override
+	public void destroy() {
+		System.out.println("destroy methods");
+		
+	}
+
+}
